@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scholarship news</title>
+<link href="css/styleadminsnews.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Scholarship news</h1>
+
+
+  
+  <div class="info">
+   {{#each data}}
+   <li> <p>{{news}}</p>
+    <a href={{link}}>Read here</a>
+    </li>
+    <ul class="b2">
+        <form action="/delete1/{{_id}}" method="post">
+          <button type="submit">Delete</button>
+        </form>
+        </ul>
+    {{/each}}
+  </div>
+  
+  <ul class="a1">
+  <button id="Add">Add</button>
+
+  <script>
+    const button = document.getElementById('Add');
+    button.addEventListener('click', () => {
+      window.location.href = '/addsnews'; // Navigate to the '/next' route
+    });
+    </script>
+  </ul>
+  </body>
+  </html>

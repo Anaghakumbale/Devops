@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Student dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="css/styledash.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="topnav">
+  <a href="/index">Logout</a>
+  <a href="ABOUT.html">About</a>
+  <a href="contact.html">Contact</a>
+ </div>
+<div class="s">
+  <h1>Scholar.Scholar</h1>
+</div>
+
+<div class="card1">
+  <img  src="assets\\slist.avif" alt="list" style="width:100%;height:85%" >
+  <div class="container1">
+    <button id="details1">List of scholarships</button>
+
+  <script>
+    const button1 = document.getElementById('details1');
+    button1.addEventListener('click', () => {
+      window.location.href = '/slist'; // Navigate to the '/next' route
+    });
+  </script>
+  </div>
+</div>
+
+<div class="card2">
+  <img src="assets\\eligibility.jpg" alt="eligibility" style="width:100%;height:85%;" >
+  <div class="container2">
+   <button onclick="window.location.href='eligibility.html';">Eligibility</button>
+  </div>
+</div>
+
+<div class="card3">
+  <img src="assets\\news.avif" alt="news" style="width:100%;height:85%;" >
+  <div class="container3">
+  <button id="details3">Scholarship news</button>
+
+  <script>
+    const button3 = document.getElementById('details3');
+    button3.addEventListener('click', () => {
+      window.location.href = '/snews'; // Navigate to the '/next' route
+    });
+  </script>
+  </div>
+</div>
+
+</body>
+</html>

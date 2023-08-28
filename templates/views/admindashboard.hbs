@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/styleadmindash.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="topnav">
+  <a href="home.html">Logout</a>
+</div>
+<div class="s">
+<h1>Scholar.Scholar</h1>
+</div>
+<div class="card1">
+  <img  src="assets\\slist.avif" alt="list" style="width:100%;height:85%" >
+  <div class="container1">
+    
+    <button id="details">List of scholarships</button>
+
+  <script>
+    const button = document.getElementById('details');
+    button.addEventListener('click', () => {
+      window.location.href = '/adminschllist'; // Navigate to the '/next' route
+    });
+  </script>
+  </div>
+</div>
+
+
+
+<div class="card2">
+  <img src="assets\\news.avif" alt="news" style="width:100%;height:85%;" >
+  <div class="container2">
+
+   <button id="detail">Scholarship news</button>
+
+  <script>
+    const button1 = document.getElementById('detail');
+    button1.addEventListener('click', () => {
+      window.location.href = '/adminsnews'; // Navigate to the '/next' route
+   });
+   </script>
+  </div>
+</div>
+
+</body>
+</html>

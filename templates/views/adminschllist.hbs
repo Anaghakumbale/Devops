@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Scholarship details</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/adminschllist.css"> 
+</head>
+<body>
+    <h1>Scholarships and their details</h1>
+
+
+<ul class="a">
+  <ul>
+    {{#each data}}
+      <li>
+        <h4>Name:
+          {{scholarshipname}}</h4>
+        <h2>Required documents:
+          {{documents}}</h2>
+        <h3>Other details:
+          {{other}}</h3>
+        <h5>Link to the website:
+          {{more}}</h5>
+        <ul class="b1">
+        <form action="/delete/{{_id}}" method="post">
+          <button type="submit">Delete</button>
+        </form>
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
+
+<ul class="a1">
+  <button id="Add">Add</button>
+
+  <script>
+    const button = document.getElementById('Add');
+    button.addEventListener('click', () => {
+      window.location.href = '/addadmin'; // Navigate to the '/next' route
+    });
+    </script>
+    </ul>
+  
+    
+</body>
+</html>

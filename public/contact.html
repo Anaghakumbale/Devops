@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact</title>
+<script src="contact.js"></script>
+<style>
+
+body {
+    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+  }
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color:  rgb(54, 130, 230);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size:20px;
+}
+
+input[type=submit]:hover {
+  background-color: #080ceb;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form name="myform" onsubmit="return validateForm()" method="post" required>
+    <label for="help">What Can We Help You With?</label>
+    <input type="text" id="help" name="help">
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" placeholder="Your name..">
+
+  
+   <label for="email">Email</label>
+    <input type="text" id="email" name="emial" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" placeholder="email id..">
+    
+    <label for="details">Details</label>
+    <textarea id="details" name="details" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>

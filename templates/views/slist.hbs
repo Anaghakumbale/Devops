@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Scholarship details</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/slist.css"> 
+</head>
+<body>
+    <h1>Scholarships and their details</h1>
+
+
+<ul class="a">
+  <ul>
+    {{#each data}}
+      <li>
+        <h4>Name:
+          {{scholarshipname}}</h4>
+        <h2>Documents:
+          {{documents}}</h2>
+        <h3>Other details:
+          {{other}}</h3>
+        <h5>Link to official website:{{more}}</h5>
+        
+      </li>
+    {{/each}}
+  </ul>
+  
+</ul>
+
+
+
+

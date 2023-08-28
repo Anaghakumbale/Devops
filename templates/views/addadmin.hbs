@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scholarship additon Panel</title>
+  <link rel="stylesheet" href="css/styleaddadmin.css">
+ <script src="addschl.js"></script>
+ </head>
+<body>
+  
+  <div class="container">
+    <div class="myform">
+      <form name="myform" onsubmit="/addadmin" method="POST" required>
+      <h2>Add scholarships</h2>
+      <label for="scholarshipname" style="font-size:20px;">Scholarship name:</label>
+        <input type="text" name="scholarshipname" placeholder="Enter name..">
+        <label for="amount" style="font-size:20px;">Scholarship amount</label>
+        <input type="number" name="amount" placeholder="Enter amount..">
+        <label for="grade10" style="font-size:20px;">Minimum percentage in 10th:</label>
+        <input type="number" name="grade10" placeholder="Enter percentage..">
+        <label for="year10" style="font-size:20px;">Student should have passed 10th standard before the year:</label>
+        <input type="number" name="year10" placeholder="Enter year..">
+        <label for="grade12" style="font-size:20px;">Minimun percentage in 12th</label>
+        <input type="number" name="grade12" placeholder="Enter percentage..">
+        <label for="year12" style="font-size:20px;">Student should have passed 12th before the year:</label>
+        <input type="number" name="year12" placeholder="Enter year..">
+        <label for="course" style="font-size:20px;">Should student currently be studying in science field?</label>
+        <input type="text" name="course" placeholder="Enter Yes/No..">
+        <label for="diploma" style="font-size:20px;">Should student be a diploma student?</label>
+        <input type="text" name="diploma" placeholder="Enter Yes/No/none..">
+        <label for="management" style="font-size:20px;">Can applicant be management student?</label>
+        <input type="text" name="management" placeholder="Enter Yes/no..">
+        <label for="phd" style="font-size:20px;">Can applicant be studying phd?</label>
+        <input type="text" name="phd" placeholder="Enter Yes/No..">
+        <label for="currentyear" style="font-size:20px;">Current year of study:</label>
+        <input type="number" name="currentyear" placeholder="Enter year..">
+        <label for="state" style="font-size:20px;">State of student:</label>
+        <input type="text" name="state" placeholder="Enter State..">
+        <label for="caste" style="font-size:20px;">Caste of student:</label>
+        <input type="text" name="caste" placeholder="Enter Caste..">
+        <label for="gender" style="font-size:20px;">Gender of student:</label>
+        <input type="text" name="gender" placeholder="Enter gender..">
+        <label for="income" style="font-size:20px;">Maximum annual income:</label>
+        <input type="number" name="income" placeholder="Enter annual income limit..">
+        <label for="otherscholarship" style="font-size:20px;">Can student be receiving other scholarships?</label>
+        <input type="text" name="otherscholarship" placeholder="Enter Yes/No/none..">
+        <label for="subject2" style="font-size:20px;">Required documents:</label>
+        <textarea id="subject2" name="documents" placeholder="Required documents.." style="height:200px"></textarea>
+        <label for="subject3" style="font-size:20px;">Other details:</label>
+        <textarea id="subject3" name="other" placeholder="Details.." style="height:200px"></textarea>
+          <label for="more" style="font-size:20px;">Link to website:</label>
+        <input type="text" name="more" placeholder="Paste link..">
+        <button type="submit" value="submit" >ADD</button>
+      </form>
+    </div>
+   </div>
+ 
+
+</body>
+
+
+</html>

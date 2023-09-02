@@ -40,69 +40,71 @@ studentSchema.pre("save", async function(next){
 
 const Registration = new mongoose.model("Register", studentSchema);
 const listSchema =new mongoose.Schema({
+    
     scholarshipname:{
         type:String,
         required:true,
         unique:true
     },
+   
     amount:{
         type:Number,
-        required:true,
+        required:true
     },
     grade10:{
-        type:Number,
+        type:Number
         
     },
     year10:{
-        type:Number,
+        type:Number
        
     },
     grade12:{
-        type:Number,
+        type:Number
         
     },
     year12:{
-        type:Number,
+        type:Number
         
     },
     course:{
-        type:String,
+        type:String
        
     },
    diploma:{
-        type:String,
+        type:String
         
     },
     management:{
-        type:String,
+        type:String
         
     },
     phd:{
-        type:String,
+        type:String
         
     },
     currentyear:{
-        type:Number,
+        type:Number
         
     },
    state:{
-        type:String,
+        type:String
         
     },
     caste:{
-        type:String,
+        type:String
         
     },
     gender:{
-        type:String,
-        
+        type:String
+
     },
     income:{
-        type:Number,
+        type:Number
        
     },
     otherscholarship:{
-        type:String,
+        type:String
         
     },
     documents:{
@@ -110,7 +112,7 @@ const listSchema =new mongoose.Schema({
         required:true
     },
     other:{
-        type:String,
+        type:String
         
        },
     more:{

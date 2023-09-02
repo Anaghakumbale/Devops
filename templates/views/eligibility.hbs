@@ -20,64 +20,64 @@
 </style>
 <body>
     <div style="display:flex; width: 80%; height: 80%;flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: center; padding: 7px; margin: auto;">
-        <form class="row g-3" name="form" action="/compare" method="post" required>
+        <form class="row g-3" name="form" action="/eligibility" method="POST" >
 
            
             
             <div class="col-md-6">
                 <label for="grade10" class="form-label">10th percentage</label>
-                <input type="number" class="form-control" id="grade10" min="0" max="100">
+                <input type="number" class="form-control" name="grade10" min="0" max="100" value="null">
             </div>
             
             <div class="col-md-6">
                 <label for="year10" class="form-label">10th passing year</label>
-                <input type="number" class="form-control" id="year10" min="2000" >
+                <input type="number" class="form-control" name="year10" value="null" >
             </div>
 
             <div class="col-md-6">
                 <label for="grade12" class="form-label">12th percentage</label>
-                <input type="number" class="form-control" id="grade12" min="0" max="100">
+                <input type="number" class="form-control" name="grade12" min="0" max="100" value="null">
             </div>
             <div class="col-md-6">
                 <label for="year12" class="form-label">12th passing year</label>
-                <input type="number" class="form-control" id="year12" min="0" >
+                <input type="number" class="form-control" name="year12" min="0" value="null" >
             </div>
 
              <div class="col-md-4">
                 <label for="course" class="form-label">Are you currently studying in science field?</label>
-                <select id="course" class="form-select">
+                <select name="course" class="form-select">
                     <option>Yes</option>
                     <option>No</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="diploma" class="form-label">Are you Diploma student?</label>
-                <select id="diploma" class="form-select">
+                <select name="diploma" class="form-select">
                     <option>Yes</option>
                     <option>No</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="management" class="form-label">Are you a management student?</label>
-                <select id="management" class="form-select">
+                <select name="management" class="form-select">
                     <option>Yes</option>
                     <option>No</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="phd" class="form-label">Are you a Phd Student?</label>
-                <select id="phd" class="form-select">
+                <select name="phd" class="form-select">
                     <option>Yes</option>
                     <option>No</option>
                 </select>
             </div>
             <div class="col-md-6">
                 <label for="currentyear" class="form-label">Current year of study</label>
-                <input type="number" class="form-control" id="currentyear" min="0" max="4">
+                <input type="number" class="form-control" name="currentyear" min="0" max="4">
             </div>
             <div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
+                <label for="state" class="form-label">State</label>
+                <select name="state" class="form-select">
                     <option>Karnataka</option>
                     <option>Kerala</option>
                     <option>Andhra Pradesh</option>
@@ -89,8 +89,8 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="Caste" class="form-label">Caste</label>
-                <select id="Caste" class="form-select">
+                <label for="caste" class="form-label">Caste</label>
+                <select name="caste" class="form-select">
                     <option>General</option>
                     <option>Madhwa brahmin</option>
                     <option>SC</option>
@@ -103,7 +103,7 @@
 
             <div class="col-md-4">
                 <label for="gender" class="form-label">Gender</label>
-                <select id="gender" class="form-select">
+                <select name="gender" class="form-select">
                     <option>Male</option>
                     <option>Female</option>
                     <option>Other</option>
@@ -112,11 +112,11 @@
 
             <div class="col-md-6">
                 <label for="income" class="form-label">Annual income</label>
-                <input type="number" class="form-control" id="income">
+                <input type="number" class="form-control" name="income">
             </div>
             <div class="col-md-4">
                 <label for="otherscholarship" class="form-label">Are you currently receiving any scholarships?</label>
-                <select id="otherscholarship" class="form-select">
+                <select name="otherscholarship" class="form-select">
                     <option>Yes</option>
                     <option>No</option>
                 </select>

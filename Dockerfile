@@ -1,11 +1,6 @@
-FROM node:18
+FROM node:slim
 WORKDIR /app
-COPY package.json /app
-RUN npm install
-COPY .dockerignore ./
-COPY . ./
-RUN npm run build 
+COPY . /app
+RUN npm install 
 EXPOSE 3000
-CMD ["node", "src/app.js"]
-
-
+CMD node src/app.js

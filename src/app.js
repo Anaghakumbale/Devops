@@ -6,9 +6,7 @@ const static_path=path.join(__dirname, "../public");
 const template_path=path.join(__dirname, "../templates/views");
 const partials_path=path.join(__dirname, "../templates/partials");
 const app =express();
-
 const hbs=require("hbs");
-
 require("./db/connect");
 const {Registration,Addadmin,Adlogin,Addnews} = require("./models/registers");
 app.use(express.static(static_path));

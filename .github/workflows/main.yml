@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 18  # Update to Node.js version 16
+          node-version: 16  # Use Node.js version 16
 
       - name: Install dependencies
         run: npm install
@@ -26,9 +26,9 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t your-image-name:tag .
+          docker build -t node-docker:latest .
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker push your-image-name:tag
+          docker push node-docker:latest
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

@@ -106,7 +106,11 @@ app.post("/adminlogin", async (req, res) => {
       const name = req.body.name;
       const password = req.body.password;
       const username = await Adlogin.findOne({ name: name });
-
+     console.log(name);
+     console.log(username.name);
+     
+      console.log(password);
+      console.log(username.password);
      if (username.password === password) {
               res.status(201).render("admindashboard");
           } else {

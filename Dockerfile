@@ -2,6 +2,7 @@ FROM node:18
 WORKDIR /app
 COPY package.json /app
 RUN npm install
+COPY .dockerignore ./
 COPY . ./
 RUN npm run build 
 EXPOSE 3000

@@ -97,7 +97,6 @@ const listSchema =new mongoose.Schema({
     },
     gender:{
         type:String
-
     },
     income:{
         type:Number

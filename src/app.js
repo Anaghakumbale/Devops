@@ -219,91 +219,75 @@ try{
 
     const allData = await Addadmin.find();
     let matches = [];
-    
-    allData.forEach(eligibility => {
-      var eligible = true;
-      console.log(eligibility.scholarshipname);
-      if (eligibility.grade10 != null && eligibility.grade10 > grade10){
-             eligible=false;
-             console.log(eligibility.grade10);
-             console.log(grade10);
+    let failedConditions = [];
+    allData.forEach(data => {
+      const eligibility = scholarship.eligibility;
+
+      let failed = false;
+      if (eligibility.grade10 && data.grade10 <= grade10){
+        failed = true;
+        failedConditions.push('grade10');
       }
-      if(eligibility.year10 != null && eligibility.year10 > year10){
-        eligible=false;
-        console.log(eligibility.year10);
-        console.log(year10);
+      if(eligibility.year10 && data.year10 <= year10){
+        failed = true;
+        failedConditions.push('year10');
       }
-      if(eligibility.grade12 != null && eligibility.grade12 > grade12){
-          eligible = false;
-          console.log(eligibility.grade12);
-          console.log(grade12);
-      }
-      if(eligibility.year12 != null && eligibility.year12 > year12){
-          eligible = false;
-          console.log(eligibility.year12);
-          console.log(year12);
-      }
-      if(eligibility.course != "" && eligibility.course != course){
-        eligible = false;
-         console.log(eligibility.course);
-         console.log(course);
-      }
-        if(eligibility.diploma != "" && eligibility.diploma != diploma){
-          eligible = false;
-          console.log(eligibility.diploma);
-          console.log(diploma);
+        if(eligibility.grade12 && data.grade12 <= grade12){
+          failed = true;
+        failedConditions.push('grade12');
         }
-        if(eligibility.management != "" && eligibility.management != management){
-          eligible = false;
-          console.log(eligibility.management);
-          console.log(management);
+        if(eligibility.year12 && data.year12 <= year12){
+          failed = true;
+          failedConditions.push('year12');
         }
-        if(eligibility.phd != "" && eligibility.phd != phd){
-          eligible = false;
-          console.log(eligibility.phd);
-          console.log(phd);
-        }
-        if(eligibility.currentyear != null && eligibility.currentyear != currentyear){
-          eligible = false;
-          console.log(eligibility.currentyear);
-        console.log(currentyear);
-        }
-        if(eligibility.state != "" && eligibility.state != state){
-          eligible = false;
-          console.log(eligibility.state);
-        console.log(state);
-        }
-    if(eligibility.caste != "" && eligibility.caste != caste){
-      eligible = false;
-    console.log(eligibility.caste);
-      console.log(caste);
-    }
-    if(eligibility.gender != "" && eligibility.gender != gender){
-          eligible = false;
-          console.log(eligibility.gender);
-          console.log(gender);
+        if(eligibility.course && data.course === course){
+          failed = true;
+        failedConditions.push('course');
         } 
-       if(eligibility.income != null && eligibility.income <= income){
-        eligible = false;
-        console.log(eligibility.income);
-        console.log(income);
-       }
-       if(eligibility.otherscholarship == "No" && otherscholarship =="Yes" ) {
-        eligible = false;
-        console.log(eligibility.otherscholarship);
-        console.log(otherscholarship);
-       }
-        
-       
-       if(eligible){
-         matches.push(eligibility.scholarshipname);
-      }
-  });
-  console.log("bye");
+        if(eligibility.diploma && data.diploma === diploma){
+          failed = true;
+        failedConditions.push('diploma');
+        } 
+        if(eligibility.management && data.management === management){
+          failed = true;
+        failedConditions.push('management');
+        } 
+        if(eligibility.phd && data.phd === phd){
+          failed = true;
+        failedConditions.push('phd');
+        } 
+        if(eligibility.currentyear && data.currentyear === currentyear){
+          failed = true;
+        failedConditions.push('currentyear');
+        }
+        if(eligibility.state && data.state === state){
+          failed = true;
+        failedConditions.push('state');
+        } 
+        if(eligibility.caste && data.caste === caste){
+          failed = true;
+        failedConditions.push('caste');
+        } 
+        if(eligibility.gender && data.gender === gender){
+          failed = true;
+        failedConditions.push('gender');
+        } 
+        if(eligibility.income && data.income >= income){
+          failed = true;
+        failedConditions.push('income');
+        }
+        if(eligibility.otherscholarhsips && data.otherscholarship === otherscholarship) {
+          failed = true;
+          failedConditions.push('otherscholarship');
+        }
+        if (!failed) {
+          matches.push(data.scholarshipname);
+        }
+  })
   if (matches.length > 0) {
     res.render('result', { names: matches.join(', ')});
   } else {
-    res.render('result', { names: 'No match found'});
+    res.render('result', { names: 'No match found', failedConditions });
   }
 }
   catch (error) {

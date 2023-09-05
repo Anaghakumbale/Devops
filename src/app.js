@@ -87,8 +87,8 @@ app.get("/contact",(req,res) => {
 })
 app.get("/admincontact",async (req,res) => {
   try {
-    const data = await Sendproblems.find({}, 'help name email details'); // Only fetch the 'news , link' field
-    res.render('admincontact', { data }); // Render the 'snews' template with data
+    const data = await Sendproblems.find({}, 'help name email details'); 
+    res.render('admincontact', { data });
   } catch (error) {
     console.error('Error fetching data:', error);
     res.status(400).send('Internal Server Error');

@@ -146,5 +146,24 @@ const NewsSchema = new mongoose.Schema({
 });
 
 const Addnews = new mongoose.model("News",NewsSchema);
-module.exports = {Registration,Addadmin,Adlogin,Addnews};
+
+const ContactSchema = new mongoose.Schema({
+    help:{
+        type:String,
+        required:true
+    },
+    name:{
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    details:{
+        type:String
+    }
+});
+const Sendproblems = new mongoose.model("Contacts",ContactSchema);
+module.exports = {Registration,Addadmin,Adlogin,Addnews,Sendproblems};
 

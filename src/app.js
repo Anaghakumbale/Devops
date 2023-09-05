@@ -8,7 +8,7 @@ const partials_path=path.join(__dirname, "../templates/partials");
 const app =express();
 const hbs=require("hbs");
 require("./db/connect");
-const {Registration,Addadmin,Adlogin,Addnews} = require("./models/registers");
+const {Registration,Addadmin,Adlogin,Addnews,Sendproblems} = require("./models/registers");
 app.use(express.static(static_path));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
@@ -46,6 +46,9 @@ app.get("/studentlogin",(req,res) => {
 app.get("/eligibility",(req,res) => {
   res.render("eligibility");
 })
+app.get("/contact",(req,res) => {
+  res.render("contact");
+})
  app.get('/slist', async (req, res) => {
     try {
       const data = await Addadmin.find({}, 'scholarshipname documents other more'); // Only fetch the 'title' field
@@ -77,6 +80,15 @@ app.get("/eligibility",(req,res) => {
   try {
     const data = await Addnews.find({}, 'news link'); // Only fetch the 'title' field
     res.render('adminsnews', { data }); // Render the 'index' template with data
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    res.status(400).send('Internal Server Error');
+  }
+})
+app.get("/admincontact",async (req,res) => {
+  try {
+    const data = await Sendproblems.find({}, 'help name email details'); // Only fetch the 'news , link' field
+    res.render('admincontact', { data }); // Render the 'snews' template with data
   } catch (error) {
     console.error('Error fetching data:', error);
     res.status(400).send('Internal Server Error');
@@ -313,5 +325,23 @@ try{
     console.error(error);
     res.render('result', { names: 'Error occurred' });
   }
+});
+app.post("/contact", async(req,res) =>{
+  try{
+      const Items = new Sendproblems({
+      help: req.body.help,
+      name:req.body.name,
+      email:req.body.email,
+      details:req.body.details
+      
+})
+console.log(help);
+const Item = await Items.save();
+
+res.status(201).render("studentdash");
+} catch(error){
+console.error("An error occurred:", error.message);
+  res.status(400).send(error);
+}
 });
 app.listen(3000);

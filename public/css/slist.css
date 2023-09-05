@@ -1,3 +1,27 @@
+body {
+   margin: 0;
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ }
+.topnav {
+   overflow: hidden;
+   background-color: rgb(54, 130, 230);
+   height:74px;
+   
+ }
+ .topnav a {
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size:40px;
+   color:white;
+   text-align: center;
+   float:right;
+   padding: 14px 16px;
+   text-decoration: none;
+  position:relative;
+ }
+ .topnav a:hover{
+   background-color:white;
+   color:black;
+ }
 h1 {
   
     margin: 0;

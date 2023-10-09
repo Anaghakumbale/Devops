@@ -329,13 +329,12 @@ try{
 app.post("/contact", async(req,res) =>{
   try{
       const Items = new Sendproblems({
-      help: req.body.help,
+      help:req.body.help,
       name:req.body.name,
       email:req.body.email,
       details:req.body.details
       
-})
-console.log(help);
+});
 const Item = await Items.save();
 
 res.status(201).render("studentdash");

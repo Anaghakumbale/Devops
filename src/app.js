@@ -40,6 +40,9 @@ app.get("/studentlogin",(req,res) => {
  app.get("/afterreg",(req,res) => {
     res.render("afterreg");
  })
+ app.get("/aftercintact",(req,res) => {
+  res.render("aftercintact");
+})
  app.get("/addsnews",(req,res) => {
   res.render("addsnews");
 })
@@ -337,7 +340,7 @@ app.post("/contact", async(req,res) =>{
 });
 const Item = await Items.save();
 
-res.status(201).render("studentdash");
+res.status(201).render("aftercintact");
 } catch(error){
 console.error("An error occurred:", error.message);
   res.status(400).send(error);

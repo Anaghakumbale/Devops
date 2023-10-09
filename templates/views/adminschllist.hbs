@@ -18,12 +18,11 @@
       <li>
         <h4>Name:
           {{scholarshipname}}</h4>
-        <h2>Required documents:
+        <h2>Required documents:<br>
           {{documents}}</h2>
-        <h3>Other details:
+        <h3>Other details:<br>
           {{other}}</h3>
-        <h5>Link to the website:
-          {{more}}</h5>
+        <h5>Link to the website:<a href="{{more}}">{{more}}</a></h5>
         <ul class="b1">
         <form action="/delete/{{_id}}" method="post">
           <button type="submit">Delete</button>
